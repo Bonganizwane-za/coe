@@ -1,0 +1,12 @@
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h3>Bookings for {{ user.username }}:</h3>
+  <ul>
+    {% for booking in bookings %}
+      <li>{{ booking.event }} ({{booking.venue}})</li>
+    {% empty %}
+        <li>No booking list yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock page_content %}

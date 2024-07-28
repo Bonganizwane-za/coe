@@ -1,0 +1,9 @@
+{% extends 'coe/base.html' %}
+
+{% block content %}
+  <h1>Venue Details</h1>
+  <p>Name: {{ venue.name }}</p>
+  <p>Address: {{ venue.address }}</p>
+  <a href="{% url 'venue_update' venue.pk %}">Update Venue</a>
+  <a href="{% url 'venue_delete' venue.pk %}">Delete Venue</a>
+{% endblock %}

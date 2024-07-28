@@ -1,0 +1,9 @@
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h1>Confirm Booking Cancellation for {{ venue.name }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Cancel</button>
+  </form>
+{% endblock page_content %}

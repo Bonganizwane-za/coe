@@ -1,0 +1,18 @@
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h4>Venue List</h4>
+<div class="jumbotron">
+  <ul>
+    {% for venue in venues %}
+      <li>
+        {{ venue.name }} ({{ venue.location }})
+      </li>
+      {% empty %}
+        <li>No venues available.</li>
+    {% endfor %}
+    <a href="">Book Venue</a>
+    
+  </ul>
+</div>
+{% endblock page_content %}

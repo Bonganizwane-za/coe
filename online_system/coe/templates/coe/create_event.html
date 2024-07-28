@@ -1,0 +1,11 @@
+<!-- create_event.html -->
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h1>Book a venue:</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book</button>
+  </form>
+{% endblock page_content %}

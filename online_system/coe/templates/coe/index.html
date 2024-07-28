@@ -1,0 +1,10 @@
+{% extends 'coe/base.html' %}
+
+{% block page_header %}
+<div class="jumbotron bg-danger">
+    <h1 class="display-3">Book a venue.</h1>
+    <p class="lead text-dark">In less than 4 minutes.</p>
+    <a class="navbar-brand text-dark" href="{% url 'coe:booking_form' %}">Make booking</a>
+    <a class="navbar-brand text-dark" href="{% url 'coe:bookings_list' %}">See your bookings</a>
+</div>
+{% endblock page_header %}

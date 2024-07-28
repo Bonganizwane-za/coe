@@ -1,0 +1,14 @@
+{% extends "coe/base.html" %}
+{% block page_content %}
+
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+    <div class="jumbotron bg-light">
+        {{ form.as_p }}
+ 
+        <button name="submit">Register</button>
+        <input type="hidden" name="next" value="{% url 'coe:index' %}"/>
+    </div>
+    </form>
+ 
+{% endblock page_content %}

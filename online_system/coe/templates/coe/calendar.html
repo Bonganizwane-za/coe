@@ -1,0 +1,29 @@
+<!-- calendar.html -->
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h1>Calendar</h1>
+  <table>
+    <tr>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    {% for week in events|dictsort:"start_date" %}
+      <tr>
+        {% for event in week %}
+          <td>
+            {% if event %}
+              {{ event.title }} ({{ event.start_date }})
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  <p><a href="{% url 'create_event' %}">Book a venue</a></p>
+{% endblock page_content %}

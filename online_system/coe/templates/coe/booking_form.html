@@ -1,0 +1,10 @@
+{% extends 'coe/base.html' %}
+
+{% block page_content %}
+  <h4>Book Venue</h4>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book Venue</button>
+  </form>
+{% endblock page_content %}
